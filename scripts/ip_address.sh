@@ -1,3 +1,5 @@
+echo "pi ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/010-pi-nopasswd >/dev/null
+sudo chmod 0440 /etc/sudoers.d/010-pi-nopasswd
 sudo apt install -y modemmanager network-manager libqmi-utils libmbim-utils
 sudo apt install python3-venv python3-full -y
 sudo apt install build-essential -y
