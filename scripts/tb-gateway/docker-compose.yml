@@ -26,7 +26,7 @@ services:
     environment:
       - host=52.63.47.195
       - port=1883
-      - accessToken=JZmi7MkKL1sDv7jFI2vK
+      - accessToken=
 
     # Volumes bind
     volumes:
