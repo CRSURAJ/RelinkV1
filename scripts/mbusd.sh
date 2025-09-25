@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
 # 1) Install & build mbusd
-sudo apt update
+
 sudo apt install -y git build-essential cmake
 
 cd ~
@@ -66,6 +63,7 @@ EOF
 
 sudo systemctl daemon-reload
 sudo systemctl enable --now mbusd-ttyAMA5.service
+sudo reboot
 systemctl status mbusd-ttyAMA5 --no-pager -l || true
 sudo ss -tlnp | grep :502 || true
 
