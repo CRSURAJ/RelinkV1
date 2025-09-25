@@ -7,6 +7,3 @@ sudo apt purge --auto-remove \
 sudo apt autoremove --purge   
 sudo apt clean
 sudo journalctl --vacuum-size=50M
-sudo apt install -y modemmanager network-manager libqmi-utils libmbim-utils
-sudo apt install python3-venv python3-full -y
-sudo apt install build-essential -y
