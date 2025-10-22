@@ -221,7 +221,7 @@ sudo apt clean
 sudo journalctl --vacuum-size=50M
 
 # Limit journald size and restart
-sudo sed -i 's/^#\?SystemMaxUse=.*/SystemMaxUse=10M/' /etc/systemd/journald.conf
+sudo sed -i 's/^#\?SystemMaxUse=.*/SystemMaxUse=50M/' /etc/systemd/journald.conf
 sudo systemctl restart systemd-journald
 
 sudo reboot
