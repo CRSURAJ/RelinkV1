@@ -117,11 +117,6 @@ sudo apt install -y mbpoll
 sudo apt install -y vnstat
 sudo systemctl enable --now vnstat
 
-# Limit journald size and restart
-sudo sed -i 's/^#\?SystemMaxUse=.*/SystemMaxUse=10M/' /etc/systemd/journald.conf
-sudo systemctl restart systemd-journald
-
-
 # 1) Install & build mbusd
 
 sudo apt install -y git build-essential cmake
@@ -221,7 +216,12 @@ apt -y \
   -o Dpkg::Options::=--force-confdef \
   -o Dpkg::Options::=--force-confold \
   full-upgrade
-  sudo apt autoremove --purge   
+sudo apt autoremove --purge   
 sudo apt clean
 sudo journalctl --vacuum-size=50M
+
+# Limit journald size and restart
+sudo sed -i 's/^#\?SystemMaxUse=.*/SystemMaxUse=10M/' /etc/systemd/journald.conf
+sudo systemctl restart systemd-journald
+
 sudo reboot
