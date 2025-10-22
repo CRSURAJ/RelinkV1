@@ -40,7 +40,7 @@ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 curl -fsSL https://tailscale.com/install.sh | sh
 sudo systemctl enable --now tailscaled
 sudo systemctl start tailscaled
-sudo tailscale up --auth-key=tskey-auth-kc4QhoJya511CNTRL-J1DkxJFqwfH8zCbbWVTegHXrGosXpfKbd
+sudo tailscale up --auth-key=tskey-auth-kyMabFDroi11CNTRL-trxi6seLXh6Q8uSyvYSyg6Mghdb4WrK8J
 sudo tailscale set --ssh
 sudo tailscale up --advertise-routes=192.168.0.0/24 --ssh
 
