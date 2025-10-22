@@ -216,7 +216,7 @@ apt -y \
   -o Dpkg::Options::=--force-confdef \
   -o Dpkg::Options::=--force-confold \
   full-upgrade
-sudo apt autoremove --purge   
+sudo apt autoremove --purge -y
 sudo apt clean
 sudo journalctl --vacuum-size=50M
 
