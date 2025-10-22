@@ -214,5 +214,14 @@ curl -fsSL https://raw.githubusercontent.com/CRSURAJ/RelinkV1/main/scripts/tb-ga
   -o ~/tb-gateway/docker-compose.yml
 cd ~/tb-gateway
 docker compose up -d
-sudo apt full-upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive \
+APT_LISTCHANGES_FRONTEND=none \
+NEEDRESTART_MODE=a \
+apt -y \
+  -o Dpkg::Options::=--force-confdef \
+  -o Dpkg::Options::=--force-confold \
+  full-upgrade
+  sudo apt autoremove --purge   
+sudo apt clean
+sudo journalctl --vacuum-size=50M
 sudo reboot
