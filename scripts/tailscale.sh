@@ -1,6 +1,6 @@
 curl -fsSL https://tailscale.com/install.sh | sh
 sudo systemctl enable --now tailscaled
 sudo systemctl start tailscaled
-sudo tailscale up --auth-key=
+sudo tailscale up --auth-key=tskey-auth-kHgrVMxjj111CNTRL-Uh1JdteomMdxKJCJyNN7MdxpGAXN9Skf
 sudo tailscale set --ssh
 sudo tailscale up --advertise-routes=192.168.0.0/24 --ssh
