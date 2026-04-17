@@ -24,7 +24,7 @@ echo
 read -rsp "Enter ThingsBoard access token: " TB_ACCESS_TOKEN
 echo
 
-if [ ! sudo -f /root/tb-gateway/docker-compose.yml ]; then
+if ! sudo test -f /root/tb-gateway/docker-compose.yml; then
   echo "ERROR: /root/tb-gateway/docker-compose.yml not found"
   exit 1
 fi
