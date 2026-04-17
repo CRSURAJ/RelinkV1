@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+echo "This script needs sudo access."
+sudo -v
+
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 TS_ROUTE="192.168.0.0/24"
 TB_HOST="52.63.47.195"
 TB_PORT="1883"
