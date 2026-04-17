@@ -4,7 +4,6 @@ set -euo pipefail
 echo "This script needs sudo access."
 sudo -v
 
-# Keep sudo alive while this script runs
 while true; do
   sudo -n true
   sleep 60
