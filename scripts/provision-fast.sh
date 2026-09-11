@@ -22,9 +22,8 @@ read -rsp "Enter Tailscale auth key: " TS_AUTHKEY
 echo
 read -rsp "Enter ThingsBoard access token: " TB_ACCESS_TOKEN
 echo
-
-if ! sudo test -f /root/tb-gateway/docker-compose.yml; then
-  echo "ERROR: /root/tb-gateway/docker-compose.yml not found"
+if ! test -f /home/pi/tb-gateway/docker-compose.yml; then
+  echo "ERROR: /home/pi/tb-gateway/docker-compose.yml not found"
   exit 1
 fi
 
@@ -41,10 +40,6 @@ EOF
 
 sudo chown root:root /etc/relink/device.env
 sudo chmod 600 /etc/relink/device.env
-
-sudo mkdir -p /home/pi/tb-gateway
-sudo cp -a /root/tb-gateway/. /home/pi/tb-gateway/
-sudo chown -R pi:pi /home/pi/tb-gateway
 
 sudo systemctl restart docker
 sudo systemctl restart tailscaled
